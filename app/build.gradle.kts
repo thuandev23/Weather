@@ -50,8 +50,15 @@ dependencies {
 
     //  lottie animations
     implementation ("com.airbnb.android:lottie:6.1.0")
+
     // GSON converter
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    // retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+
+    //picasso
+    implementation ("com.squareup.picasso:picasso:2.8")
+
+    implementation ("com.google.android.gms:play-services-location:17.0.0")
+
+    implementation ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 }
