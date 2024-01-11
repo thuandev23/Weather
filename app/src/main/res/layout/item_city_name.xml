@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginHorizontal="8dp"
+    app:cardElevation="12dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:padding="8dp">
 
         <TextView
-            android:id="@+id/cityNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="HEeladawf"
-            android:padding="16dp"
-            android:textSize="16sp" />
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/koho_regular"
+            android:text="Language"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/nextArrowImageView"
+            android:id="@+id/nextArrowTv"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/next" />
-    </LinearLayout>
+            android:src="@drawable/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/black" />
-
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

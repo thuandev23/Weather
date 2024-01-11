@@ -52,12 +52,12 @@ class MainActivity : AppCompatActivity() {
         dialog.setContentView(sheetLayoutBinding.root)
 
         fetchWeatherData("ho chi minh")
+        getForeCase("ho chi minh")
         searchCity()
 
         binding.tvForecast.setOnClickListener{
-//            openDialog()
-            Toast.makeText(applicationContext, "Bạn đã nhấp vào", Toast.LENGTH_SHORT).show()
-            println(getForeCase("ho chi minh"))
+            openDialog()
+//            Toast.makeText(applicationContext, "Bạn đã nhấp vào", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -65,7 +65,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun openDialog() {
-        getForeCase("ho chi minh")
         sheetLayoutBinding.rvForecast.apply {
             setHasFixedSize(true)
             layoutManager = GridLayoutManager(this@MainActivity,1, RecyclerView.HORIZONTAL, false)
@@ -102,7 +101,7 @@ class MainActivity : AppCompatActivity() {
 
                     val adapter = RvAdapter(forecastArray)
                     sheetLayoutBinding.rvForecast.adapter = adapter
-                    sheetLayoutBinding.tvSheet.text = "Five days forecast ${data.city}"
+                    sheetLayoutBinding.tvSheet.text = "Five days forecast ${cityName}"
 
                 }
             }
@@ -116,6 +115,7 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {
                     fetchWeatherData(query)
+                    getForeCase(query)
                 }
                 return true
             }

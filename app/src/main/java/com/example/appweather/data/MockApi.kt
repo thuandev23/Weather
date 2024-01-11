@@ -16,7 +16,7 @@ interface MockApi {
     ): Call<JsonWeather>
 
     @GET("forecast")
-    fun getForeCast(
+    suspend fun getForeCast(
         @Query("q") city:String,
         @Query("appid") appid:String,
         @Query("units") units:String

@@ -14,8 +14,7 @@ class RvAdapter( private val forecastArray: ArrayList<ForeCastData>) : RecyclerV
     class ViewHolder(val binding : RvItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
-
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(RvItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
@@ -37,7 +36,7 @@ class RvAdapter( private val forecastArray: ArrayList<ForeCastData>) : RecyclerV
 
     private fun displayTime(dtTxt: String): CharSequence? {
         val input = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-        val output = DateTimeFormatter.ofPattern("MM-dd HH:mm")
+        val output = DateTimeFormatter.ofPattern("dd/MM \n HH:mm")
         val dateTime = LocalDateTime.parse(dtTxt,input)
         return output.format(dateTime)
 

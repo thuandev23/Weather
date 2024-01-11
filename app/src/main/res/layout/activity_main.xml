@@ -394,7 +394,7 @@
         android:layout_gravity="center"
         android:padding="5dp"
         android:text="Five days Forecast"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         app:drawableEndCompat="@drawable/baseline_location_on_24"
         app:layout_constraintBottom_toTopOf="@+id/glMainForecastBtn"
